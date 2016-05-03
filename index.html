@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/mygrid.css" rel="stylesheet" type="text/css"/>
+        <link href="css/css.css" rel="stylesheet" type="text/css"/>
+        <link href="css/fonts.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="fonts/font-awesome-4.6.1/css/font-awesome.min.css">
+        <script src="js/nextValidDrawDate.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="page-wrap">
+
+            <div id="container">
+                <!-- TOP WIDGETS -->
+                <div id="row-top" class="row">
+                    <div class="col-wrapper group">
+
+                        <div class="">
+                            <div id="slider">
+                                <div id="slides">
+                                    <img src="images/slide_01.jpg" alt="Slide 4" class="active" />
+                                    <img src="images/slide_02.jpg" alt="Slide 3" />
+                                    <img src="images/slide_03.jpg" alt="Slide 2" />
+                                    <img src="images/slide_04.jpg" alt="Slide 1" />
+                                </div>
+                                <div id="slider-nav">
+                                    <!--a class="active" href="javascript:void(0)"></a>
+                                    <a href="javascript:void(0)"></a>
+                                    <a href="javascript:void(0)"></a>
+                                    <a href="javascript:void(0)"></a-->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="">
+
+                            <div id="widgets">
+
+                                <div class="row">
+                                    <div id="widget-top-1" class="grad-dark">
+                                        <div class="ribbon"><span>Just 79p <br> per line</span></div>
+                                        <h4>GRAND PRIZE</h4>
+                                        <p class="text-big text-white">£7,000,000</p>
+                                        <a class="btn btn-gold btn-small" href="javascript:void(0)">VIEW ALL PRIZES</a>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div id="widget-top-2" class="grad-dark">
+                                        <div class="ribbon"><span>Just 79p <br> per line</span></div>
+                                        <h4>NEXT DRAW</h4>
+                                        <p class="text-white">
+                                            <span id="timer-next-day"></span>
+                                            <span id="timer-next-month"></span>
+                                            <span id="timer-next-year"></span>
+                                        </p>
+                                        <table class="timer">
+                                            <tbody>
+                                                <tr class="timer-dial">
+                                                    <td id="timer-day"></td>
+                                                    <td id="timer-hour"></td>
+                                                    <td id="timer-min"></td>
+                                                    <td id="timer-sec"></td>
+                                                </tr>
+                                            <tbody>
+                                            <tfoot class="timer-label text-small">
+                                                <tr>
+                                                    <td>Days</td>
+                                                    <td>Hours</td>
+                                                    <td>Mins</td>
+                                                    <td>Secs</td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div id="widget-top-3" class="grad-dark">
+                                        <h4>LAST DRAW</h4>
+                                        <p class="text-white">
+                                            <span id="timer-last-day"></span>
+                                            <span id="timer-last-month"></span>
+                                            <span id="timer-last-year"></span>
+                                        </p>
+                                        <ul id="last-draw-result" class="balls">
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AD-BAR -->
+                <div class="row">
+                    <div class="col-wrapper group">
+                        <div class="col col3-span3">
+                            <div id="ad-bar">
+                                <p><span class="text-gold text-medium text-bold">PICK &amp; PLAY </span>&nbsp;&nbsp;<span class="text-small">Pick Your Numbers by typing or using the</span> <span class="text-gold text-bold">Number Picker</span> below. <span class="text-bold">Minimum of 2 lines &amp; 8 draws.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MAIN WIDGETS -->
+                <div id="row-main" class="row">
+                    <div class="col-wrapper group">
+
+                        <div class="col col3-span1">
+                            <div id="widget-main-1">
+                                <span class="widget-main-heading text-white text-small">NUMBER PICKER</span>
+                                <div class="widget-main-body box-round grad-dark">
+                                    <ul id="widget-number-picker" class="balls"></ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col col3-span1">
+                            <div id="widget-main-2">
+                                <span class="widget-main-heading text-default text-small">YOUR NUMBERS</span>
+                                <div id="widget-your-numbers" class="widget-main-body box-round grad-gold">
+
+                                </div>
+                                <div class="add-line">
+                                    <div class="row">
+                                        <div class="col-wrapper group">
+                                            <div class="col col2-span1">
+                                                <div class="text-small"><a href="javascript:void(0)" onclick="addLine();"><i class="add-line-ico"></i>Add a line</a></div>
+                                            </div>
+                                            <div class="col col2-span1">
+                                                <div class="text-small"><i class="bonus-ball-ico"></i>Denotes bonus ball</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col col3-span1">
+                            <div id="widget-main-3">
+                                <a class="btn btn-gold btn-gold-alt btn-big text-bolder " href="javascript:void(0)">PLAY NOW</a>
+                                <div class="widget-main-body box-round grad-dark text-white text-center">
+                                    <p>0 LINES AT <span class="text-gold">JUST 69p PER LINE *</span></p>
+                                    <p>2 Draws every week (Wed &amp; Sat)</p>
+                                    <p>Renewal date N/A</p>
+                                    <p>£0 Per month</p>
+                                </div>
+                                <div class="text-sub text-default text-center"><p>*Based on average 9 draws each month</p></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        <footer>
+            <nav class="text-small">
+                <a href="javascript:void(0)">sports</a>
+                <a href="javascript:void(0)">in-play</a>
+                <a href="javascript:void(0)">blog</a>
+                <a href="javascript:void(0)">novaball</a>
+            </nav>
+        </footer>
+
+        <script>
+            var lineCounter = 0;
+            (function () {
+                var lineCounter = 0;
+                // Prevent the css transition element render on page load
+                document.getElementsByTagName("BODY")[0].className = "";
+                // Initialize Last Draw widget (some random numbers)
+                init();
+                fixHeight();
+                window.onresize = function () {
+                    fixHeight();
+                };
+
+                for (var i = 0; i < 5; i++)
+                {
+                    var line = new createLine("widget-your-numbers");
+                    line.make(lineCounter);
+                    lineCounter++;
+                }
+
+                setTimerWidget();
+                setInterval("setTimerWidget()", 1000);
+
+            })();
+
+
+            /***************************************************************************************************/
+
+            /*
+             * Adjusts the height of the top row
+             */
+            function fixHeight() {
+                var row = document.getElementById("row-top");
+                var slider = document.getElementById("slider");
+                var widgets = document.getElementById("widgets");
+                slider.style.height = row.offsetHeight + 'px';
+                widgets.style.height = slider.style.height;
+            }
+
+            /*
+             * Returns lottery results (quasi API)
+             * @return {Number} getBonusResult
+             * @return {Array} getDrawResults
+             */
+            function lotteryAPI()
+            {
+                this.bonusBallRange = {
+                    "count": 1,
+                    "min": 1,
+                    "max": 11
+                };
+                this.numbersRange = {
+                    "count": 6,
+                    "min": 1,
+                    "max": 45
+                };
+
+                this.getBonusResult = function ()
+                {
+                    return randomNumber(this.bonusBallRange);
+                };
+
+                this.getDrawResults = function ()
+                {
+                    return generateResults(this.numbersRange);
+                };
+
+                this.getLotteryNumbers = function ()
+                {
+                    return generateNumbers(this.numbersRange);
+                };
+            }
+
+            /*
+             * Initialize widgets
+             */
+            function init()
+            {
+                lastDraw();
+                numberPicker();
+            }
+
+            /*
+             * Fill "YOUR NUMBERS" widget line with QP (random) values
+             * @param {object} object
+             * @param {Boolean} bonusBall
+             * @param {String/Number} elementText
+             */
+            function quickPick(object)
+            {
+                var lottery = new lotteryAPI();
+                var bonusBall = lottery.getBonusResult();
+                var qpResults = lottery.getDrawResults();
+                var ul = object.parentNode;
+                var box = document.querySelectorAll("#" + ul.id + " li p"), i;
+
+                box[box.length - 1].innerHTML = bonusBall;
+                for (i = 0; i < box.length - 1; ++i)
+                {
+                    box[i].innerHTML = qpResults[i];
+                }
+            }
+            
+            /*
+             * Creates "LAST DRAW" widget and appends in to a DOM
+             */
+            function lastDraw()
+            {
+                var lottery = new lotteryAPI();
+                var parent = document.getElementById("last-draw-result");
+
+                if (parent.hasChildNodes())
+                {
+                    while (parent.firstChild) {
+                        parent.removeChild(parent.firstChild);
+                    }
+                }
+
+                for (var i = 0; i < lottery.numbersRange.count; i++)
+                {
+                    var ball = new Ball(parent.id, false, lottery.getDrawResults()[i]);
+                    ball.make("li");
+                    if (i === 5)
+                    {
+                        var ball = new Ball(parent.id, true, lottery.getBonusResult());
+                        ball.make("li");
+                    }
+                }
+            }
+
+            /*
+             * Creates "LAST DRAW" widget and appends in to a DOM
+             */
+            function numberPicker()
+            {
+                var lottery = new lotteryAPI();
+                var parent = document.getElementById("widget-number-picker");
+                for (var i = 1; i < lottery.getLotteryNumbers().length; i++)
+                {
+                    var ball = new Ball(parent.id, false, lottery.getLotteryNumbers()[i]);
+                    ball.make("li");
+                }
+            }
+            
+            /*
+             * Generates Array of lottery result numbers
+             * @param {Array Object} range
+             * @return {Array} array
+             */
+            function generateResults(range)
+            {
+                var temp = "";
+                var array = new Array();
+                for (var element = 0; element < range.count; element++)
+                {
+                    while ((temp = isDuplicate(array, randomNumber(range))) === true)
+                        ;
+                    array[element] = temp;
+                }
+                return array;
+            }
+
+            /*
+             * Generates Array of lottery numbers
+             * @param {Array Object} range
+             * @return {Array} array
+             */
+            function generateNumbers(range)
+            {
+                var array = new Array();
+                for (var element = range.min; element <= range.max; element++)
+                {
+                    array[element] = element;
+                }
+                return array;
+            }
+
+            /*
+             * Verifies whether a new number already exists in the array
+             * @param {Array} array
+             * @param {Number} number
+             * @return {Boolean} true
+             * @return {Number} number
+             */
+            function isDuplicate(array, number)
+            {
+                for (var i = 0; i < array.length; i++)
+                {
+                    if (number === array[i])
+                    {
+                        return true;
+                    }
+                }
+                return number;
+            }
+
+            /*
+             * Create a Ball object
+             * @param {String} parentElement (node ID)
+             * @param {Boolean} bonusBall
+             * @param {String/Number} elementText
+             */
+            function Ball(parentElement, bonusBall, elementText)
+            {
+                this.parentElement = document.getElementById(parentElement);
+                this.bonusBall = bonusBall;
+                this.elementClass = "";
+                this.elementText = elementText;
+
+                this.make = function (type)
+                {
+                    newElement = document.createElement(type);
+                    this.parentElement.appendChild(newElement);
+                    if (this.elementId !== "" && typeof this.elementId !== "undefined")
+                    {
+                        newElement.id = this.elementId;
+                    }
+                    if (this.bonusBall)
+                    {
+                        newElement.className = "bonus-ball";
+                        newSubElement = document.createElement("span");
+                        newSubElement.className = "bonus-number";
+                        newSubElement.innerHTML = this.elementText;
+                        newElement.appendChild(newSubElement);
+                    }
+
+                    if (!this.bonusBall)
+                        newElement.innerHTML = this.elementText;
+                };
+            }
+            
+             /*
+             * Adds one line to "TOUR NUMBERS" widget
+             */
+            function addLine()
+            {
+                var line = new createLine("widget-your-numbers");
+                line.make(lineCounter);
+                console.log("Added row: " + line.getId());
+            }
+            
+             /*
+             * Removes one line from "TOUR NUMBERS" widget
+             * @param {Object} object
+             */
+            function removeLine(object)
+            {
+                var line = object.parentNode;
+                var parent = document.getElementById(line.id).parentNode;
+                child = parent.children;
+                var linesCount = child.length;
+
+                if (linesCount > 1)
+                {
+                    if (parent !== null && parent !== "")
+                    {
+                        if (line !== null && line !== "")
+                        {
+                            console.log("Removed row: " + line.id);
+                            parent.removeChild(line);
+                        }
+                    }
+                } else
+                {
+                    alert("You need at least 1 line to play!");
+                }
+            }
+
+            /*
+             * Create a Box object
+             * @param {String} parentElement (node ID)
+             * @param {Boolean} bonusBall
+             * @param {Boolean} quickPick
+             */
+            function createLine(parentElement)
+            {
+                this.parentElement = document.getElementById(parentElement);
+                this.lineId = "";
+
+                this.make = function (index)
+                {
+                    var divRow = document.createElement("div");
+                    divRow.setAttribute("id", "row-" + index);
+                    this.lineId = divRow.id;
+
+                    var divDrawLine = document.createElement("div");
+                    divDrawLine.setAttribute("class", "draw-line");
+
+                    var divDrawLineRemove = document.createElement("div");
+                    divDrawLineRemove.setAttribute("class", "draw-line-remove");
+                    divDrawLineRemove.setAttribute("onclick", "removeLine(this);");
+                    divDrawLineRemove.innerHTML = "&nbsp;";
+
+                    var ulBoxes = document.createElement("ul");
+                    ulBoxes.setAttribute("id", "boxes-" + index);
+                    ulBoxes.setAttribute("class", "boxes");
+
+                    this.parentElement.appendChild(divRow);
+                    divRow.appendChild(divDrawLine);
+                    divRow.insertBefore(divDrawLineRemove, divDrawLine.nextSibling);
+                    divDrawLine.appendChild(ulBoxes);
+
+                    for (var i = 0; i < 8; i++)
+                    {
+                        if (i === 0)
+                        {
+                            var box = new Box(ulBoxes.id, false, true);
+                            box.make();
+                        } else if (i === 7)
+                        {
+                            var box = new Box(ulBoxes.id, true, false);
+                            box.make();
+                        } else
+                        {
+                            var box = new Box(ulBoxes.id, false, false);
+                            box.make();
+                        }
+                    }
+
+                    lineCounter++;
+                };
+
+                this.getId = function ()
+                {
+                    return this.lineId;
+                };
+            }
+
+            /*
+             * Create a Box object
+             * @param {String} parentElement (node ID)
+             * @param {Boolean} bonusBall
+             * @param {Boolean} quickPick
+             */
+            function Box(parentElement, bonusBall, quickPick)
+            {
+                this.parentElement = document.getElementById(parentElement);
+                this.bonusBall = bonusBall;
+                this.quickPick = quickPick;
+//                var input = document.createElement("input");
+//                input.setAttribute("type", "number");
+//                input.setAttribute("min", "1");
+//                input.setAttribute("max", "45");
+//                input.setAttribute("maxlength", "2");
+//                input.setAttribute("oninput", "checkInput(this)");
+                this.make = function ()
+                {
+                    newElement = document.createElement("li");
+                    if (this.quickPick && !this.bonusBall)
+                    {
+                        newElement.className = "quick-pick";
+                        newElement.innerHTML = "QP";
+                        newElement.setAttribute("onclick", "quickPick(this);");
+                    }
+                    if (this.bonusBall && !this.quickPick)
+                    {
+                        newElement.className = "bonus-ball";
+                        newSubElement = document.createElement("p");
+                        newSubElement.innerHTML = "&nbsp;";
+                        newElement.appendChild(newSubElement);
+                        //newElement.appendChild(input);
+                    }
+                    if (!this.bonusBall && !this.quickPick)
+                    {
+                        newSubElement = document.createElement("p");
+                        newSubElement.innerHTML = "&nbsp;";
+                        newElement.appendChild(newSubElement);
+                        //newElement.appendChild(input);
+                    }
+                    this.parentElement.appendChild(newElement);
+                };
+            }
+
+            /*
+             * Generate random number
+             * @param {Array Object} range
+             * @return {Number} randomNumber
+             */
+            function randomNumber(range)
+            {
+                return Math.floor((Math.random() * range.max) + range.min);
+            }
+
+            function checkInput(object)
+            {
+                var li = object.parentNode;
+                var ul = li.parentNode;
+                var input = document.querySelectorAll("#" + ul.id + " li"), i;
+
+                for (i = 0; i < input.length; ++i)
+                {
+                    if (input[i].value === object.value) {
+                        console.log("XXXXXX");
+                    }
+                }
+
+                if (object.value.length > object.max.length)
+                {
+                    object.value = object.value.slice(0, object.max.length);
+                }
+            }
+
+
+
+            /*
+             * Slider Image/Navigation toggler
+             * @param {String} id
+             * @param {Object} link
+             * @return {Number} randomNumber
+             */
+            function toggleStyles(id, link)
+            {
+                var elem = document.getElementById(id);
+                var link = link;
+                var sliderImg = document.querySelectorAll('[id^="sliderImg-"]', '[id^="sliderLink-"]'), i;
+                var sliderLink = document.querySelectorAll('[id^="sliderLink-"]'), i;
+                if (sliderImg.length === sliderLink.length)
+                {
+                    for (i = 0; i < sliderImg.length; ++i)
+                    {
+                        sliderImg[i].className = "";
+                        sliderLink[i].className = "";
+                    }
+                }
+
+                link.className = "active";
+                elem.className = "active";
+            }
+
+            /*
+             * Slider Control
+             */
+            (function ()
+            {
+                var slider = {
+                    init: function ()
+                    {
+                        this.createSliderNav();
+                    },
+                    getSlides: function ()
+                    {
+                        var numberOfSlides = "";
+                        numberOfSlides = document.querySelectorAll("#slides img");
+                        for (var i = 0; i < numberOfSlides.length; i++)
+                        {
+                            numberOfSlides[i].setAttribute("id", "sliderImg-" + i);
+                        }
+                        return numberOfSlides;
+                    },
+                    createLink: function ()
+                    {
+                        var linkArray = new Array();
+                        var sliderSlides = this.getSlides();
+                        console.log("Number of Slides: " + sliderSlides.length);
+                        var sliderLink = "";
+                        for (var i = 0; i < sliderSlides.length; i++)
+                        {
+                            sliderLink = document.createElement("a");
+                            sliderLink.setAttribute("id", "sliderLink-" + i);
+                            sliderLink.setAttribute("href", "javascript:void(0);");
+                            sliderLink.setAttribute("onclick", 'toggleStyles("sliderImg-' + i + '", this);');
+                            if (i === 0)
+                            {
+                                sliderLink.className = "active";
+                            }
+                            linkArray.push(sliderLink);
+                        }
+                        return linkArray;
+
+                    },
+                    createSliderNav: function ()
+                    {
+                        var nav = document.getElementById("slider-nav");
+                        var linkArray = this.createLink();
+                        console.log("Links To Crate: " + linkArray.length);
+                        for (var i = 0; i < linkArray.length; i++)
+                        {
+                            nav.appendChild(linkArray[i]);
+                        }
+
+                    }
+                };
+                slider.createSliderNav();
+            })();
+        </script>
+    </body>
+</html>
